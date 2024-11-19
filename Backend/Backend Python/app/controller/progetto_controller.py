@@ -46,4 +46,4 @@ class ProjectController:
             return labs
         except Exception as e:
             print(f"Errore durante il recupero dei laboratori del progetto: {e}")
-            raise
+            raise RuntimeError(f"Errore durante il recupero dei laboratori per il progetto con CUP {cup}: {e}")
