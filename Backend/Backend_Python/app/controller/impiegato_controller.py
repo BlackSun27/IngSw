@@ -14,7 +14,7 @@ class ImpiegatoController:
     def rimuovi_impiegato(self, cf):
         self.dao.rimuovi_impiegato(cf)
 
-    def promuovi_impiegato(self, cf, merito):
+    def promuovi_impiegato(self, cf, merito: bool):
         self.dao.promuovi_impiegato(cf, merito)
 
     def carica_afferenze(self, cf):

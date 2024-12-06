@@ -15,9 +15,6 @@ class ProjectController:
     def rimuovi_progetto(self, cup: str):
         self.dao.remove_project(cup)
 
-    def aggiungi_laboratorio(self, cup: str, nome_lab: str):
-        self.dao.add_lab_to_project(cup, nome_lab)
-
     def ottieni_impiegati_progetto(self, cup: str) -> List[dict]:
         return self.dao.get_project_employees(cup)
 

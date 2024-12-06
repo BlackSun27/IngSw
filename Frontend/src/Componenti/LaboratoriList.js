@@ -98,7 +98,7 @@ const LaboratoriList = () => {
   };
 
   return (
-    <div class = "scrollable-table">
+    <div className = "scrollable-table">
       <div>
         <h1>Lista Laboratori</h1>
         <table border="1">
@@ -179,7 +179,7 @@ const LaboratoriList = () => {
       )}
 
       {selectedLab && (
-        <div class = "scrollable-table">
+        <div className = "scrollable-table">
           <h2>Dettagli per {selectedLab}</h2>
           <h3>Afferenze</h3>
           <ul>

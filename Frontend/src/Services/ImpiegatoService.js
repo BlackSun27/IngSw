@@ -40,7 +40,7 @@ export const promuoviImpiegato = async(cf,merito) =>{
 };
 
 export const getPromozioni = async(cf) =>{
-    const response = await fetch('$API_URL/$cf/promozioni', {
+    const response = await fetch('/api/gestionale/promozioni', {
         method : "GET",
     });
 

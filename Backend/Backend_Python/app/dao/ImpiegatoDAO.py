@@ -54,7 +54,7 @@ class ImpiegatoDAO:
             raise RuntimeError(f"Errore nella promozione dell'impiegato: {e}")
 
     def get_afferenze_imp(self, cf: str, laboratorio: List[str]):
-        query = text("SELECT nomelab FROM utilizza WHERE cf = :cf")
+        query = text("SELECT nomelab FROM utilizza WHERE cf = :cf LIMIT 1")
         try:
             result = self.db.execute(query, {"cf": cf})
             for row in result:

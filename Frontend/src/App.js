@@ -1,27 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import ImpiegatiPage from "./pages/ImpiegatiPage";
-import ProgettiPage from "./pages/ProgettiPage";
-import LaboratoriPage from "./pages/LaboratoriPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./src/Home";
+import ImpiegatiList from "./Components/ImpiegatiList";
+import LaboratoriList from "./Components/LaboratoriList";
+import ProgettiList from "./Components/ProgettiList";
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/impiegati" element={<ImpiegatiPage />} />
-        <Route path="/progetti" element={<ProgettiPage />} />
-        <Route path="/laboratori" element={<LaboratoriPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/impiegati" element={<ImpiegatiList />} />
+        <Route path="/laboratori" element={<LaboratoriList />} />
+        <Route path="/progetti" element={<ProgettiList />} />
       </Routes>
-      <Footer />
     </Router>
   );
-}
+};
 
 export default App;

@@ -35,7 +35,7 @@ def promuovi_impiegato(cf, merito):
     with next(get_db()) as db:
         controller = ImpiegatoController(db)
     try:
-        merito_bool = merito.lower() == 'true'
+        merito_bool:bool = merito.lower() == 'true'
         controller.promuovi_impiegato(cf, merito_bool)
         return jsonify({"message": f"Impiegato con CF {cf} promosso"}), 200
     except Exception as e:

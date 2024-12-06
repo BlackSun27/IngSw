@@ -1,0 +1,24 @@
+.scrollable-table {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+  }
+  
+  .scrollable-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .scrollable-table th, .scrollable-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .scrollable-table th {
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  

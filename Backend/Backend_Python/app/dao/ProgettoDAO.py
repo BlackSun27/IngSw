@@ -31,15 +31,6 @@ class ProjectDAO:
         except Exception as e:
             self.db.rollback()
             raise RuntimeError(f"Errore nella rimozione del progetto: {e}")
-    
-    def add_lab_to_project(self, cup: str, nome_lab: str):
-        query = text("CALL inseriscilavora(:cup, :nome_lab);")
-        try:
-            self.db.execute(query, {"cup": cup, "nome_lab": nome_lab})
-            self.db.commit()
-        except Exception as e:
-            self.db.rollback()
-            raise RuntimeError(f"Errore nell'inserimento del laboratorio al progetto: {e}")
 
     def get_project_employees(self, cup: str) -> List[dict]:
         query = text("SELECT nome, cognome, cf FROM presenza WHERE cup = :cup;")
