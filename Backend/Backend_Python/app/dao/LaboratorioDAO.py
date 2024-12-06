@@ -35,16 +35,16 @@ class LaboratorioDAO:
             self.db.rollback()
             raise RuntimeError(f"Errore nell'aggiunta di un afferente: {e}")
 
-    def afferenze_lab(self, nome_lab: str, l_cf: List[str]):
+    def afferenze_lab(self, nome_lab: str):
         query = text("SELECT cf FROM utilizza WHERE nomelab = :nome_lab")
         try:
             result = self.db.execute(query, {"nome_lab": nome_lab})
-            for row in result:
-                l_cf.append(row["cf"])
+            return [dict(row) for row in result.mappings()]
         except Exception as e:
             raise RuntimeError(f"Errore nel recupero delle afferenze: {e}")
 
-    def get_resp_sci(self, nome_lab: str, resp: List[str]):
+
+    def get_resp_sci(self, nome_lab: str):
         query = text("""
             SELECT i.cf, i.nome, i.cognome
             FROM laboratorio AS l
@@ -53,14 +53,12 @@ class LaboratorioDAO:
         """)
         try:
             result = self.db.execute(query, {"nome_lab": nome_lab})
-            for row in result:
-                resp.append(row["cf"])
-                resp.append(row["nome"])
-                resp.append(row["cognome"])
+            resp = [{"cf": row["cf"], "nome": row["nome"], "cognome": row["cognome"]} for row in result.mappings()]
+            return resp
         except Exception as e:
             raise RuntimeError(f"Errore nel recupero del responsabile scientifico: {e}")
 
-    def get_prog_lavora(self, nome_lab: str, cup: List[str]):
+    def get_prog_lavora(self, nome_lab: str):
         query = text("""
             SELECT cup 
             FROM lavora 
@@ -68,7 +66,6 @@ class LaboratorioDAO:
         """)
         try:
             result = self.db.execute(query, {"nome_lab": nome_lab})
-            for row in result:
-                cup.append(row["cup"])
+            return [row._asdict() for row in result]
         except Exception as e:
             raise RuntimeError(f"Errore nel recupero dei progetti collegati: {e}")

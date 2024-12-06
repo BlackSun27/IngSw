@@ -1,0 +1,420 @@
+2024-12-03 15:00:37,202 - INFO - Avvio dell'app Flask...
+2024-12-03 15:00:39,084 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://100.74.23.160:4000
+2024-12-03 15:00:39,085 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 15:00:39,170 - INFO -  * Restarting with stat
+2024-12-03 15:00:46,338 - INFO - Avvio dell'app Flask...
+2024-12-03 15:00:46,474 - WARNING -  * Debugger is active!
+2024-12-03 15:00:46,522 - INFO -  * Debugger PIN: 268-326-537
+2024-12-03 15:02:13,022 - INFO -  * Detected change in 'c:\\Users\\admin\\Desktop\\Appunti\\INGSW\\INGSW2324_52\\Backend\\Backend_Python\\app\\routes\\progetto_route.py', reloading
+2024-12-03 15:02:14,357 - INFO -  * Restarting with stat
+2024-12-03 15:02:29,623 - INFO - Avvio dell'app Flask...
+2024-12-03 15:02:29,847 - WARNING -  * Debugger is active!
+2024-12-03 15:02:29,935 - INFO -  * Debugger PIN: 268-326-537
+2024-12-03 15:02:55,063 - INFO - Endpoint '/' è stato chiamato.
+2024-12-03 15:02:55,070 - INFO - 127.0.0.1 - - [03/Dec/2024 15:02:55] "GET / HTTP/1.1" 200 -
+2024-12-03 15:02:55,530 - INFO - Endpoint '/' è stato chiamato.
+2024-12-03 15:02:55,532 - INFO - 127.0.0.1 - - [03/Dec/2024 15:02:55] "GET / HTTP/1.1" 200 -
+2024-12-03 15:02:56,612 - INFO - 127.0.0.1 - - [03/Dec/2024 15:02:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-03 15:04:46,252 - INFO - 127.0.0.1 - - [03/Dec/2024 15:04:46] "[33mGET /api/progetto/ HTTP/1.1[0m" 404 -
+2024-12-03 15:05:11,678 - INFO -  * Detected change in 'c:\\Users\\admin\\Desktop\\Appunti\\INGSW\\INGSW2324_52\\Backend\\Backend_Python\\app\\routes\\progetto_route.py', reloading
+2024-12-03 15:05:23,741 - INFO -  * Restarting with stat
+2024-12-03 15:05:58,487 - INFO - Avvio dell'app Flask...
+2024-12-03 15:05:59,757 - WARNING -  * Debugger is active!
+2024-12-03 15:05:59,813 - INFO -  * Debugger PIN: 268-326-537
+2024-12-03 15:06:31,682 - INFO - 127.0.0.1 - - [03/Dec/2024 15:06:31] "[33mGET /api/gestionale HTTP/1.1[0m" 404 -
+2024-12-03 15:07:17,003 - INFO - 127.0.0.1 - - [03/Dec/2024 15:07:17] "[33mGET /api/gestionale/impegati HTTP/1.1[0m" 404 -
+2024-12-03 15:07:50,040 - INFO - 127.0.0.1 - - [03/Dec/2024 15:07:50] "[33mGET /api/gestionale/impegati HTTP/1.1[0m" 404 -
+2024-12-03 15:12:46,000 - INFO - 127.0.0.1 - - [03/Dec/2024 15:12:46] "[33mGET http://127.0.0.1:4000/api/gestionale/impegati HTTP/1.1[0m" 404 -
+2024-12-03 15:13:31,193 - INFO - 127.0.0.1 - - [03/Dec/2024 15:13:31] "[33mGET /api/gestionale/impegati HTTP/1.1[0m" 404 -
+2024-12-03 15:13:38,097 - INFO - 127.0.0.1 - - [03/Dec/2024 15:13:38] "GET /api/gestionale/impiegati HTTP/1.1" 200 -
+2024-12-03 15:13:45,279 - INFO - 127.0.0.1 - - [03/Dec/2024 15:13:45] "GET http://127.0.0.1:4000/api/gestionale/impiegati HTTP/1.1" 200 -
+2024-12-03 15:14:51,746 - INFO - 127.0.0.1 - - [03/Dec/2024 15:14:51] "[33mGET /api/impiegati HTTP/1.1[0m" 404 -
+2024-12-03 15:16:15,696 - INFO - 127.0.0.1 - - [03/Dec/2024 15:16:15] "GET /api/gestionale/impiegati HTTP/1.1" 200 -
+2024-12-03 15:21:05,224 - INFO - 127.0.0.1 - - [03/Dec/2024 15:21:05] "[31m[1mDELETE http://127.0.0.1:4000/api/impiegati/CF2 HTTP/1.1[0m" 400 -
+2024-12-03 15:21:43,399 - INFO - 127.0.0.1 - - [03/Dec/2024 15:21:43] "DELETE http://127.0.0.1:4000/api/impiegati/CF1 HTTP/1.1" 200 -
+2024-12-03 15:21:53,574 - INFO - 127.0.0.1 - - [03/Dec/2024 15:21:53] "DELETE http://127.0.0.1:4000/api/impiegati/CF3 HTTP/1.1" 200 -
+2024-12-03 15:22:03,138 - INFO - 127.0.0.1 - - [03/Dec/2024 15:22:03] "[31m[1mGET /api/impiegati/CF3 HTTP/1.1[0m" 405 -
+2024-12-03 15:28:12,436 - INFO - 127.0.0.1 - - [03/Dec/2024 15:28:12] "[31m[1mDELETE http://127.0.0.1:4000/api/impiegati/CF2 HTTP/1.1[0m" 400 -
+2024-12-03 15:51:01,029 - INFO - Avvio dell'app Flask...
+2024-12-03 15:51:01,238 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://100.74.23.160:4000
+2024-12-03 15:51:01,241 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 15:51:01,252 - INFO -  * Restarting with stat
+2024-12-03 15:51:06,992 - INFO - Avvio dell'app Flask...
+2024-12-03 15:51:07,124 - WARNING -  * Debugger is active!
+2024-12-03 15:51:07,164 - INFO -  * Debugger PIN: 268-326-537
+2024-12-03 15:51:20,725 - INFO - 127.0.0.1 - - [03/Dec/2024 15:51:20] "[31m[1mDELETE http://127.0.0.1:4000/api/impiegati/CF2 HTTP/1.1[0m" 400 -
+2024-12-03 16:10:42,271 - INFO - 127.0.0.1 - - [03/Dec/2024 16:10:42] "DELETE http://127.0.0.1:4000/api/impiegati/CF2 HTTP/1.1" 200 -
+2024-12-04 09:52:53,736 - INFO - Avvio dell'app Flask...
+2024-12-04 09:52:54,611 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 09:52:54,611 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 09:52:54,647 - INFO -  * Restarting with stat
+2024-12-04 09:53:00,731 - INFO - Avvio dell'app Flask...
+2024-12-04 09:53:00,906 - WARNING -  * Debugger is active!
+2024-12-04 09:53:00,953 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 09:53:04,433 - INFO - 127.0.0.1 - - [04/Dec/2024 09:53:04] "[31m[1mPATCH http://127.0.0.1:4000/api/impiegati/CF1 HTTP/1.1[0m" 405 -
+2024-12-04 10:32:18,529 - INFO - Avvio dell'app Flask...
+2024-12-04 10:32:18,838 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 10:32:18,839 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 10:32:18,849 - INFO -  * Restarting with stat
+2024-12-04 10:32:22,484 - INFO - Avvio dell'app Flask...
+2024-12-04 10:32:22,547 - WARNING -  * Debugger is active!
+2024-12-04 10:32:22,582 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 10:32:50,565 - INFO - 127.0.0.1 - - [04/Dec/2024 10:32:50] "[35m[1mPATCH http://127.0.0.1:4000/api/impiegati/CF1/promuovi/true HTTP/1.1[0m" 500 -
+2024-12-04 10:33:09,936 - INFO - 127.0.0.1 - - [04/Dec/2024 10:33:09] "[31m[1mGET /api/impiegati/CF1/promuovi/true HTTP/1.1[0m" 405 -
+2024-12-04 10:33:11,093 - INFO - 127.0.0.1 - - [04/Dec/2024 10:33:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-04 10:52:30,486 - INFO - Avvio dell'app Flask...
+2024-12-04 10:52:30,680 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 10:52:30,681 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 10:52:30,689 - INFO -  * Restarting with stat
+2024-12-04 10:52:37,333 - INFO - Avvio dell'app Flask...
+2024-12-04 10:52:37,568 - WARNING -  * Debugger is active!
+2024-12-04 10:52:37,603 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 10:52:43,730 - INFO - 127.0.0.1 - - [04/Dec/2024 10:52:43] "PATCH http://127.0.0.1:4000/api/impiegati/CF1/promuovi/true HTTP/1.1" 200 -
+2024-12-04 10:53:20,293 - INFO - 127.0.0.1 - - [04/Dec/2024 10:53:20] "GET http://127.0.0.1:4000/api/impiegati/CF1/laboratori HTTP/1.1" 200 -
+2024-12-04 10:54:23,877 - INFO - 127.0.0.1 - - [04/Dec/2024 10:54:23] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1[0m" 400 -
+2024-12-04 10:55:30,456 - INFO - 127.0.0.1 - - [04/Dec/2024 10:55:30] "GET http://127.0.0.1:4000/api/gestionale/laboratori HTTP/1.1" 200 -
+2024-12-04 11:03:30,869 - INFO - Avvio dell'app Flask...
+2024-12-04 11:03:30,974 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 11:03:30,974 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 11:03:30,981 - INFO -  * Restarting with stat
+2024-12-04 11:03:34,543 - INFO - Avvio dell'app Flask...
+2024-12-04 11:03:34,622 - WARNING -  * Debugger is active!
+2024-12-04 11:03:34,667 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 11:03:56,364 - INFO - 127.0.0.1 - - [04/Dec/2024 11:03:56] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1[0m" 400 -
+2024-12-04 11:25:46,847 - INFO - Avvio dell'app Flask...
+2024-12-04 11:25:47,025 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 11:25:47,025 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 11:25:47,031 - INFO -  * Restarting with stat
+2024-12-04 11:25:52,206 - INFO - Avvio dell'app Flask...
+2024-12-04 11:25:52,376 - WARNING -  * Debugger is active!
+2024-12-04 11:25:52,406 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 11:25:54,561 - INFO - 127.0.0.1 - - [04/Dec/2024 11:25:54] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1[0m" 400 -
+2024-12-04 11:36:24,812 - INFO - Avvio dell'app Flask...
+2024-12-04 11:36:24,997 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 11:36:24,997 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 11:36:25,007 - INFO -  * Restarting with stat
+2024-12-04 11:36:28,079 - INFO - Avvio dell'app Flask...
+2024-12-04 11:36:28,489 - WARNING -  * Debugger is active!
+2024-12-04 11:36:28,520 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 11:36:40,434 - INFO - 127.0.0.1 - - [04/Dec/2024 11:36:40] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1[0m" 400 -
+2024-12-04 11:41:20,154 - INFO - 127.0.0.1 - - [04/Dec/2024 11:41:20] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A/responsabile HTTP/1.1[0m" 400 -
+2024-12-04 11:41:44,417 - INFO - 127.0.0.1 - - [04/Dec/2024 11:41:44] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A/progetti HTTP/1.1" 200 -
+2024-12-04 11:44:33,105 - INFO - 127.0.0.1 - - [04/Dec/2024 11:44:33] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A/responsabile HTTP/1.1[0m" 400 -
+2024-12-04 11:45:49,529 - INFO - 127.0.0.1 - - [04/Dec/2024 11:45:49] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1[0m" 400 -
+2024-12-04 11:52:06,207 - INFO - Avvio dell'app Flask...
+2024-12-04 11:52:06,340 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 11:52:06,340 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 11:52:06,348 - INFO -  * Restarting with stat
+2024-12-04 11:52:11,019 - INFO - Avvio dell'app Flask...
+2024-12-04 11:52:11,135 - WARNING -  * Debugger is active!
+2024-12-04 11:52:11,177 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 11:52:14,107 - INFO - 127.0.0.1 - - [04/Dec/2024 11:52:14] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1" 200 -
+2024-12-04 11:52:24,678 - INFO - 127.0.0.1 - - [04/Dec/2024 11:52:24] "GET /api/laboratori/Laboratorio%20A HTTP/1.1" 200 -
+2024-12-04 11:52:47,847 - INFO - 127.0.0.1 - - [04/Dec/2024 11:52:47] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A/progetti HTTP/1.1" 200 -
+2024-12-04 11:52:55,584 - INFO - 127.0.0.1 - - [04/Dec/2024 11:52:55] "GET /api/laboratori/Laboratorio%20A/progetti HTTP/1.1" 200 -
+2024-12-04 11:53:08,456 - INFO - 127.0.0.1 - - [04/Dec/2024 11:53:08] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A/responsabile HTTP/1.1" 200 -
+2024-12-04 11:53:14,940 - INFO - 127.0.0.1 - - [04/Dec/2024 11:53:14] "GET /api/laboratori/Laboratorio%20A/responsabile HTTP/1.1" 200 -
+2024-12-04 12:08:36,039 - INFO - Avvio dell'app Flask...
+2024-12-04 12:08:36,159 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:08:36,160 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:08:36,166 - INFO -  * Restarting with stat
+2024-12-04 12:08:41,215 - INFO - Avvio dell'app Flask...
+2024-12-04 12:08:41,313 - WARNING -  * Debugger is active!
+2024-12-04 12:08:41,357 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:08:45,334 - INFO - 127.0.0.1 - - [04/Dec/2024 12:08:45] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1" 200 -
+2024-12-04 12:16:11,632 - INFO - Avvio dell'app Flask...
+2024-12-04 12:16:11,786 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:16:11,787 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:16:11,794 - INFO -  * Restarting with stat
+2024-12-04 12:16:15,807 - INFO - Avvio dell'app Flask...
+2024-12-04 12:16:15,902 - WARNING -  * Debugger is active!
+2024-12-04 12:16:15,943 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:16:17,789 - INFO - 127.0.0.1 - - [04/Dec/2024 12:16:17] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1" 200 -
+2024-12-04 12:22:47,062 - INFO - Avvio dell'app Flask...
+2024-12-04 12:22:47,184 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:22:47,185 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:22:47,190 - INFO -  * Restarting with stat
+2024-12-04 12:22:51,456 - INFO - Avvio dell'app Flask...
+2024-12-04 12:22:51,566 - WARNING -  * Debugger is active!
+2024-12-04 12:22:51,615 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:40:54,761 - INFO - Avvio dell'app Flask...
+2024-12-04 12:40:54,987 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:40:54,988 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:40:54,997 - INFO -  * Restarting with stat
+2024-12-04 12:41:01,198 - INFO - Avvio dell'app Flask...
+2024-12-04 12:41:01,326 - WARNING -  * Debugger is active!
+2024-12-04 12:41:01,382 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:44:25,659 - INFO - 127.0.0.1 - - [04/Dec/2024 12:44:25] "[31m[1mGET http://127.0.0.1:4000/api/laboratori/ HTTP/1.1[0m" 400 -
+2024-12-04 12:45:32,587 - INFO - Avvio dell'app Flask...
+2024-12-04 12:45:32,794 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:45:32,795 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:45:32,807 - INFO -  * Restarting with stat
+2024-12-04 12:45:37,624 - INFO - Avvio dell'app Flask...
+2024-12-04 12:45:37,706 - WARNING -  * Debugger is active!
+2024-12-04 12:45:37,735 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:45:41,696 - INFO - 127.0.0.1 - - [04/Dec/2024 12:45:41] "[33mGET http://127.0.0.1:4000/api/progetti/ HTTP/1.1[0m" 404 -
+2024-12-04 12:45:54,530 - INFO - 127.0.0.1 - - [04/Dec/2024 12:45:54] "[33mGET http://127.0.0.1:4000/api/progetti/ HTTP/1.1[0m" 404 -
+2024-12-04 12:46:21,865 - INFO - 127.0.0.1 - - [04/Dec/2024 12:46:21] "[31m[1mGET http://127.0.0.1:4000/api/progetto/ HTTP/1.1[0m" 400 -
+2024-12-04 12:50:58,762 - INFO - Avvio dell'app Flask...
+2024-12-04 12:50:58,978 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:50:58,979 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:50:58,985 - INFO -  * Restarting with stat
+2024-12-04 12:51:04,335 - INFO - Avvio dell'app Flask...
+2024-12-04 12:51:04,415 - WARNING -  * Debugger is active!
+2024-12-04 12:51:04,466 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:51:12,250 - INFO - 127.0.0.1 - - [04/Dec/2024 12:51:12] "[31m[1mGET http://127.0.0.1:4000/api/progetto/ HTTP/1.1[0m" 400 -
+2024-12-04 12:51:18,990 - INFO - 127.0.0.1 - - [04/Dec/2024 12:51:18] "[31m[1mGET http://127.0.0.1:4000/api/progetto/ HTTP/1.1[0m" 400 -
+2024-12-04 12:55:13,691 - INFO - Avvio dell'app Flask...
+2024-12-04 12:55:13,843 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 12:55:13,844 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 12:55:13,855 - INFO -  * Restarting with stat
+2024-12-04 12:55:18,939 - INFO - Avvio dell'app Flask...
+2024-12-04 12:55:19,031 - WARNING -  * Debugger is active!
+2024-12-04 12:55:19,083 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 12:55:52,362 - INFO - 127.0.0.1 - - [04/Dec/2024 12:55:52] "[33mDELETE http://127.0.0.1:4000/api/laboratorio/Laboratorio%20A HTTP/1.1[0m" 404 -
+2024-12-04 12:56:06,694 - INFO - 127.0.0.1 - - [04/Dec/2024 12:56:06] "[31m[1mDELETE http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1[0m" 400 -
+2024-12-04 13:09:12,716 - INFO - 127.0.0.1 - - [04/Dec/2024 13:09:12] "DELETE http://127.0.0.1:4000/api/laboratori/Laboratorio%20A HTTP/1.1" 200 -
+2024-12-04 13:48:50,399 - INFO - 127.0.0.1 - - [04/Dec/2024 13:48:50] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/ HTTP/1.1[0m" 415 -
+2024-12-04 13:49:36,519 - INFO - 127.0.0.1 - - [04/Dec/2024 13:49:36] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 14:26:27,480 - INFO - 127.0.0.1 - - [04/Dec/2024 14:26:27] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 16:13:16,879 - INFO - Avvio dell'app Flask...
+2024-12-04 16:13:18,445 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 16:13:18,445 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:13:18,511 - INFO -  * Restarting with stat
+2024-12-04 16:13:23,539 - INFO - Avvio dell'app Flask...
+2024-12-04 16:13:23,649 - WARNING -  * Debugger is active!
+2024-12-04 16:13:23,710 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:13:29,413 - INFO - 127.0.0.1 - - [04/Dec/2024 16:13:29] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 16:14:27,185 - INFO - 127.0.0.1 - - [04/Dec/2024 16:14:27] "GET http://127.0.0.1:4000/api/progetto/CUP1 HTTP/1.1" 200 -
+2024-12-04 16:14:50,313 - INFO - 127.0.0.1 - - [04/Dec/2024 16:14:50] "DELETE http://127.0.0.1:4000/api/progetto/CUP1 HTTP/1.1" 200 -
+2024-12-04 16:20:28,912 - INFO - Avvio dell'app Flask...
+2024-12-04 16:20:29,180 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 16:20:29,181 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:20:29,189 - INFO -  * Restarting with stat
+2024-12-04 16:20:35,311 - INFO - Avvio dell'app Flask...
+2024-12-04 16:20:35,484 - WARNING -  * Debugger is active!
+2024-12-04 16:20:35,516 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:20:37,576 - INFO - 127.0.0.1 - - [04/Dec/2024 16:20:37] "DELETE http://127.0.0.1:4000/api/progetto/CUP1 HTTP/1.1" 200 -
+2024-12-04 16:21:09,628 - INFO - 127.0.0.1 - - [04/Dec/2024 16:21:09] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 16:25:06,297 - INFO -  * Detected change in 'c:\\Users\\admin\\Desktop\\Appunti\\INGSW\\INGSW2324_52\\Backend\\Backend_Python\\app\\controller\\laboratorio_controller.py', reloading
+2024-12-04 16:25:06,880 - INFO -  * Restarting with stat
+2024-12-04 16:25:15,531 - INFO - Avvio dell'app Flask...
+2024-12-04 16:25:15,625 - WARNING -  * Debugger is active!
+2024-12-04 16:25:15,653 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:26:04,283 - INFO - Avvio dell'app Flask...
+2024-12-04 16:26:04,661 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 16:26:04,662 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:26:04,670 - INFO -  * Restarting with stat
+2024-12-04 16:26:12,810 - INFO - Avvio dell'app Flask...
+2024-12-04 16:26:12,949 - WARNING -  * Debugger is active!
+2024-12-04 16:26:13,003 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:26:14,893 - INFO - 127.0.0.1 - - [04/Dec/2024 16:26:14] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 16:29:54,946 - INFO - Avvio dell'app Flask...
+2024-12-04 16:29:55,096 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 16:29:55,097 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:29:55,111 - INFO -  * Restarting with stat
+2024-12-04 16:29:59,822 - INFO - Avvio dell'app Flask...
+2024-12-04 16:30:00,000 - WARNING -  * Debugger is active!
+2024-12-04 16:30:00,139 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:30:02,345 - INFO - 127.0.0.1 - - [04/Dec/2024 16:30:02] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 16:38:05,279 - INFO - Avvio dell'app Flask...
+2024-12-04 16:38:05,434 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 16:38:05,434 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:38:05,441 - INFO -  * Restarting with stat
+2024-12-04 16:38:09,733 - INFO - Avvio dell'app Flask...
+2024-12-04 16:38:09,814 - WARNING -  * Debugger is active!
+2024-12-04 16:38:09,843 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:38:31,182 - INFO - 127.0.0.1 - - [04/Dec/2024 16:38:31] "POST http://127.0.0.1:4000/api/progetto/ HTTP/1.1" 200 -
+2024-12-04 16:46:57,521 - INFO - Avvio dell'app Flask...
+2024-12-04 16:46:57,662 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 16:46:57,665 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:46:57,672 - INFO -  * Restarting with stat
+2024-12-04 16:47:03,067 - INFO - Avvio dell'app Flask...
+2024-12-04 16:47:03,205 - WARNING -  * Debugger is active!
+2024-12-04 16:47:03,251 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 16:47:05,994 - INFO - 127.0.0.1 - - [04/Dec/2024 16:47:05] "[35m[1mPOST http://127.0.0.1:4000/api/progetto/ HTTP/1.1[0m" 201 -
+2024-12-04 16:47:29,614 - INFO - 127.0.0.1 - - [04/Dec/2024 16:47:29] "DELETE http://127.0.0.1:4000/api/progetto/CUP123 HTTP/1.1" 200 -
+2024-12-04 16:51:05,843 - INFO - 127.0.0.1 - - [04/Dec/2024 16:51:05] "[31m[1mPOST http://127.0.0.1:4000/api/impiegati/ HTTP/1.1[0m" 400 -
+2024-12-04 16:58:52,088 - INFO - 127.0.0.1 - - [04/Dec/2024 16:58:52] "[31m[1mPOST http://127.0.0.1:4000/api/impiegati/ HTTP/1.1[0m" 400 -
+2024-12-04 16:58:59,877 - INFO - 127.0.0.1 - - [04/Dec/2024 16:58:59] "[31m[1mPOST http://127.0.0.1:4000/api/impiegati/ HTTP/1.1[0m" 400 -
+2024-12-04 17:02:43,947 - INFO - 127.0.0.1 - - [04/Dec/2024 17:02:43] "[31m[1mPOST http://127.0.0.1:4000/api/impiegati/ HTTP/1.1[0m" 400 -
+2024-12-04 17:06:32,675 - INFO - Avvio dell'app Flask...
+2024-12-04 17:06:32,792 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 17:06:32,792 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 17:06:32,797 - INFO -  * Restarting with stat
+2024-12-04 17:06:36,774 - INFO - Avvio dell'app Flask...
+2024-12-04 17:06:36,869 - WARNING -  * Debugger is active!
+2024-12-04 17:06:36,901 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 17:06:39,959 - INFO - 127.0.0.1 - - [04/Dec/2024 17:06:39] "[31m[1mPOST http://127.0.0.1:4000/api/impiegati/ HTTP/1.1[0m" 400 -
+2024-12-04 17:07:51,630 - INFO - Avvio dell'app Flask...
+2024-12-04 17:07:51,763 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-04 17:07:51,764 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 17:07:51,785 - INFO -  * Restarting with stat
+2024-12-04 17:07:56,555 - INFO - Avvio dell'app Flask...
+2024-12-04 17:07:56,670 - WARNING -  * Debugger is active!
+2024-12-04 17:07:56,699 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 17:08:02,526 - INFO - 127.0.0.1 - - [04/Dec/2024 17:08:02] "[35m[1mPOST http://127.0.0.1:4000/api/impiegati/ HTTP/1.1[0m" 201 -
+2024-12-04 17:08:25,744 - INFO - 127.0.0.1 - - [04/Dec/2024 17:08:25] "DELETE http://127.0.0.1:4000/api/impiegati/CF103 HTTP/1.1" 200 -
+2024-12-04 17:10:32,492 - INFO - 127.0.0.1 - - [04/Dec/2024 17:10:32] "[35m[1mPOST http://127.0.0.1:4000/api/laboratori/ HTTP/1.1[0m" 201 -
+2024-12-04 17:10:48,671 - INFO - 127.0.0.1 - - [04/Dec/2024 17:10:48] "DELETE http://127.0.0.1:4000/api/laboratori/Laboratorio%20L HTTP/1.1" 200 -
+2024-12-04 17:17:18,268 - INFO - 127.0.0.1 - - [04/Dec/2024 17:17:18] "[33mPOST http://127.0.0.1:4000/api/laboratori/CUP3/laboratori HTTP/1.1[0m" 404 -
+2024-12-04 17:17:31,142 - INFO - 127.0.0.1 - - [04/Dec/2024 17:17:31] "[33mGET /api/laboratori/CUP3/laboratori HTTP/1.1[0m" 404 -
+2024-12-04 17:17:38,411 - INFO - 127.0.0.1 - - [04/Dec/2024 17:17:38] "[31m[1mGET /api/laboratori/ HTTP/1.1[0m" 405 -
+2024-12-04 17:20:14,321 - INFO - 127.0.0.1 - - [04/Dec/2024 17:20:14] "[33mPOST http://127.0.0.1:4000/api/laboratori/CUP3/laboratori HTTP/1.1[0m" 404 -
+2024-12-04 17:23:04,249 - INFO - 127.0.0.1 - - [04/Dec/2024 17:23:04] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3/laboratori HTTP/1.1[0m" 400 -
+2024-12-04 21:00:24,168 - INFO - Avvio dell'app Flask...
+2024-12-04 21:00:25,376 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.0.111:4000
+2024-12-04 21:00:25,377 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 21:00:25,385 - INFO -  * Restarting with stat
+2024-12-04 21:00:29,638 - INFO - Avvio dell'app Flask...
+2024-12-04 21:00:29,718 - WARNING -  * Debugger is active!
+2024-12-04 21:00:29,750 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 21:00:32,026 - INFO - 127.0.0.1 - - [04/Dec/2024 21:00:32] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3/laboratori HTTP/1.1[0m" 400 -
+2024-12-04 21:04:34,249 - INFO - 127.0.0.1 - - [04/Dec/2024 21:04:34] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3/laboratori HTTP/1.1[0m" 400 -
+2024-12-04 21:05:46,650 - INFO - 127.0.0.1 - - [04/Dec/2024 21:05:46] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3/laboratori HTTP/1.1[0m" 400 -
+2024-12-04 22:14:20,566 - INFO - 127.0.0.1 - - [04/Dec/2024 22:14:20] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3/impiegati HTTP/1.1[0m" 405 -
+2024-12-04 22:14:39,235 - INFO - 127.0.0.1 - - [04/Dec/2024 22:14:39] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3/impiegati HTTP/1.1[0m" 405 -
+2024-12-04 22:15:12,707 - INFO - 127.0.0.1 - - [04/Dec/2024 22:15:12] "[31m[1mPOST http://127.0.0.1:4000/api/progetto/CUP3 HTTP/1.1[0m" 405 -
+2024-12-04 22:15:18,155 - INFO - 127.0.0.1 - - [04/Dec/2024 22:15:18] "GET http://127.0.0.1:4000/api/progetto/CUP3 HTTP/1.1" 200 -
+2024-12-04 22:16:51,615 - INFO - 127.0.0.1 - - [04/Dec/2024 22:16:51] "[31m[1mGET http://127.0.0.1:4000/api/progetto/CUP3/impiegati HTTP/1.1[0m" 400 -
+2024-12-04 22:17:00,006 - INFO - 127.0.0.1 - - [04/Dec/2024 22:17:00] "[31m[1mGET http://127.0.0.1:4000/api/progetto/CUP1/impiegati HTTP/1.1[0m" 400 -
+2024-12-04 22:23:23,980 - INFO - Avvio dell'app Flask...
+2024-12-04 22:23:24,991 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.0.111:4000
+2024-12-04 22:23:24,992 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 22:23:25,000 - INFO -  * Restarting with stat
+2024-12-04 22:23:31,047 - INFO - Avvio dell'app Flask...
+2024-12-04 22:23:31,199 - WARNING -  * Debugger is active!
+2024-12-04 22:23:31,282 - INFO -  * Debugger PIN: 268-326-537
+2024-12-04 22:23:32,663 - INFO - 127.0.0.1 - - [04/Dec/2024 22:23:32] "GET http://127.0.0.1:4000/api/progetto/CUP1/impiegati HTTP/1.1" 200 -
+2024-12-04 22:23:43,464 - INFO - 127.0.0.1 - - [04/Dec/2024 22:23:43] "GET http://127.0.0.1:4000/api/progetto/CUP3/impiegati HTTP/1.1" 200 -
+2024-12-04 22:25:03,456 - INFO - 127.0.0.1 - - [04/Dec/2024 22:25:03] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20I/responsabile HTTP/1.1" 200 -
+2024-12-04 22:25:14,948 - INFO - 127.0.0.1 - - [04/Dec/2024 22:25:14] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20I/progetti HTTP/1.1" 200 -
+2024-12-04 22:25:30,940 - INFO - 127.0.0.1 - - [04/Dec/2024 22:25:30] "GET http://127.0.0.1:4000/api/laboratori/Laboratorio%20I HTTP/1.1" 200 -
+2024-12-04 22:26:12,040 - INFO - 127.0.0.1 - - [04/Dec/2024 22:26:12] "GET http://127.0.0.1:4000/api/impiegati/CF1/laboratori HTTP/1.1" 200 -
+2024-12-05 10:59:54,512 - INFO - Avvio dell'app Flask...
+2024-12-05 10:59:55,288 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-05 10:59:55,289 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 10:59:55,324 - INFO -  * Restarting with stat
+2024-12-05 10:59:59,509 - INFO - Avvio dell'app Flask...
+2024-12-05 10:59:59,618 - WARNING -  * Debugger is active!
+2024-12-05 10:59:59,668 - INFO -  * Debugger PIN: 268-326-537
+2024-12-05 11:00:16,473 - INFO - 127.0.0.1 - - [05/Dec/2024 11:00:16] "GET http://127.0.0.1:4000/api/impiegati/CF1/promozioni HTTP/1.1" 200 -
+2024-12-05 11:00:48,572 - INFO - 127.0.0.1 - - [05/Dec/2024 11:00:48] "GET http://127.0.0.1:4000/api/impiegati/CF1/laboratori HTTP/1.1" 200 -
+2024-12-05 11:01:06,223 - INFO - 127.0.0.1 - - [05/Dec/2024 11:01:06] "GET http://127.0.0.1:4000/api/impiegati/CF1/promozioni HTTP/1.1" 200 -
+2024-12-05 11:02:54,976 - INFO - 127.0.0.1 - - [05/Dec/2024 11:02:54] "GET http://127.0.0.1:4000/api/impiegati/CF4/promozioni HTTP/1.1" 200 -
+2024-12-05 13:27:12,119 - INFO - Avvio dell'app Flask...
+2024-12-05 13:27:12,633 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-05 13:27:12,633 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 13:27:12,644 - INFO -  * Restarting with stat
+2024-12-05 13:27:30,832 - INFO - Avvio dell'app Flask...
+2024-12-05 13:27:30,936 - WARNING -  * Debugger is active!
+2024-12-05 13:27:30,981 - INFO -  * Debugger PIN: 268-326-537
+2024-12-05 13:27:48,256 - INFO - 127.0.0.1 - - [05/Dec/2024 13:27:48] "GET http://127.0.0.1:4000/api/impiegati/CF4/promozioni HTTP/1.1" 200 -
+2024-12-05 13:27:55,920 - INFO - 127.0.0.1 - - [05/Dec/2024 13:27:55] "[31m[1mGET http://127.0.0.1:4000/api/impiegati/CF4/progetto HTTP/1.1[0m" 400 -
+2024-12-05 14:38:41,893 - INFO - Avvio dell'app Flask...
+2024-12-05 14:38:42,069 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-05 14:38:42,069 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 14:38:42,082 - INFO -  * Restarting with stat
+2024-12-05 14:38:46,024 - INFO - Avvio dell'app Flask...
+2024-12-05 14:38:46,102 - WARNING -  * Debugger is active!
+2024-12-05 14:38:46,148 - INFO -  * Debugger PIN: 268-326-537
+2024-12-05 14:39:53,770 - INFO - 127.0.0.1 - - [05/Dec/2024 14:39:53] "[33mGET http://127.0.0.1:4000/api/impiegati/CF4/progetto HTTP/1.1[0m" 404 -
+2024-12-05 14:54:17,307 - INFO - 127.0.0.1 - - [05/Dec/2024 14:54:17] "[31m[1mGET http://127.0.0.1:4000/api/impiegati/CF4/progetti HTTP/1.1[0m" 400 -
+2024-12-05 15:05:14,401 - INFO - Avvio dell'app Flask...
+2024-12-05 15:05:14,487 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://10.225.8.216:4000
+2024-12-05 15:05:14,488 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 15:05:14,494 - INFO -  * Restarting with stat
+2024-12-05 15:05:18,483 - INFO - Avvio dell'app Flask...
+2024-12-05 15:05:18,567 - WARNING -  * Debugger is active!
+2024-12-05 15:05:18,598 - INFO -  * Debugger PIN: 268-326-537
+2024-12-05 15:05:36,665 - INFO - 127.0.0.1 - - [05/Dec/2024 15:05:36] "GET http://127.0.0.1:4000/api/impiegati/CF4/progetti HTTP/1.1" 200 -

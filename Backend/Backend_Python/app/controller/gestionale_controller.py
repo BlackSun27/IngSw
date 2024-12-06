@@ -1,9 +1,10 @@
 from app.dao.GestionaleDAO import GestionaleDAO
 from app.model import Impiegato, Promozione, Laboratorio, Progetto
 
-
 class GestionaleController:
     def __init__(self, db):
+        if not db:
+            raise ValueError("La connessione al database non può essere nulla!")
         self.dao = GestionaleDAO(db)
         self.impiegati = []
         self.promozioni = []

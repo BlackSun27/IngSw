@@ -3,7 +3,6 @@ from sqlalchemy.sql import text
 from typing import List
 from datetime import date
 
-
 class GestionaleDAO:
     def __init__(self, db: Session):
         self.db = db
