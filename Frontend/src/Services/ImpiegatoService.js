@@ -26,6 +26,19 @@ export const addImpiegato = async(impiegato) =>{
     return response.json();
 };
 
+export const promuoviImpiegato = async(cf,merito) =>{
+    const response = await fetch('$API_URL/$cf/promuovi/$merito', {
+        method : "PATCH",
+    });
+
+    if(!response.ok){
+        const error = await response.json();
+        throw new Error(error.error || "Errore nella promozione dell'impiegato");
+    }
+
+    return response.json();
+};
+
 export const getPromozioni = async(cf) =>{
     const response = await fetch('$API_URL/$cf/promozioni', {
         method : "GET",
