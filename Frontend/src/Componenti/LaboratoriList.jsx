@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import {
   getLaboratori,
   aggiungiLaboratori,
-  rimuoviImpiegato,
+  rimuoviLaboratorio,
   caricaAfferenze,
   caricaResponsabile,
   caricaProgetti,
-} from "./LaboratoriService";
+} from "C:/Users/admin/Desktop/Appunti/INGSW/INGSW2324_52/Frontend/src/Services/LaboratorioService.jsx";
 import { useNavigate } from "react-router-dom";
+import '../styles/table.css';
 
 const LaboratoriList = () => {
   const navigate = useNavigate();
@@ -26,7 +27,10 @@ const LaboratoriList = () => {
 
   useEffect(() => {
     getLaboratori()
-      .then(setLaboratori)
+    .then((data) => {
+        const uniqueLaboratori = Array.from(new Map(data.map(lab => [lab.nome, lab])).values());
+        setLaboratori(uniqueLaboratori);
+      })
       .catch((error) => {
         if (error.message.includes("404")) {
           navigate("/not-found", { state: { message: "Nessun laboratorio trovato." } });
@@ -59,7 +63,7 @@ const LaboratoriList = () => {
   const handleRimuoviLaboratorio = async () => {
     if (!selectedLab) return alert("Seleziona un laboratorio per rimuoverlo!");
     try {
-      await rimuoviImpiegato(selectedLab);
+      await rimuoviLaboratorio(selectedLab);
       setSelectedLab(null);
       const updatedLaboratori = await getLaboratori();
       setLaboratori(updatedLaboratori);
@@ -99,9 +103,9 @@ const LaboratoriList = () => {
 
   return (
     <div className = "scrollable-table">
-      <div>
+      <div className = "left-panel">
         <h1>Lista Laboratori</h1>
-        <table border="1">
+        <table className = "table" border="1">
           <thead>
             <tr>
               <th>Nome</th>
@@ -194,7 +198,7 @@ const LaboratoriList = () => {
         </div>
       )}
 
-      <div>
+      <div className="buttons-container">
         <button onClick={handleRimuoviLaboratorio}>Rimuovi Laboratorio</button>
         <button onClick={() => setShowAddForm((prev) => !prev)}>
           {showAddForm ? "Annulla Aggiunta" : "Aggiungi Laboratorio"}
