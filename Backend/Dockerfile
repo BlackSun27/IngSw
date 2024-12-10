@@ -12,8 +12,10 @@ RUN pip install -r requirements.txt
 
 COPY ./Backend_Python /app/
 
-ENTRYPOINT [ “python” ]
+ENV PYTHONPATH="/app"
 
-EXPOSE 4000
+ENTRYPOINT [ "flask" ]
 
-CMD [ "flask", "run", "--host:0.0.0.0", "--port:4000" ]
+EXPOSE 5000
+
+CMD [ "--app", "app.py", "run", "--host=0.0.0.0", "--port=5000" ]

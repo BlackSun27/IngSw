@@ -12,12 +12,23 @@ def inserisci_progetto():
         controller = ProjectController(db)
     try:
         controller.inserisci_progetto(
-            data["cup"], data["ref_sci"], data["resp"],
-            data["nome"], data["budget"]
+            data["cup"], 
+            data["ref_sci"], 
+            data["resp"], 
+            data["nome"], 
+            data["budget"]
         )
-        return jsonify({"message":"Progetto {cup} inserito con successo!"}), 201
+        
+        return jsonify({
+            "cup": data["cup"],
+            "ref_sci": data["ref_sci"],
+            "resp": data["resp"],
+            "nome": data["nome"],
+            "budget": data["budget"]
+        }), 201
     except Exception as e:
         return jsonify({"error": str(e)})
+
     
 @progetto_bp.route("/<cup>", methods = ["DELETE"])
 def rimuovi_progetto(cup):
@@ -34,10 +45,11 @@ def ottieni_impiegati_progetto(cup):
     with next(get_db()) as db:
         controller = ProjectController(db)
     try:
-        impiegati = controller.ottieni_impiegati_progetto(cup)
-        return jsonify({"impiegati": impiegati})
+        impiegati_data = controller.ottieni_impiegati_progetto(cup)
+        return jsonify(impiegati_data)
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
     
 @progetto_bp.route("/<cup>", methods=["GET"])

@@ -34,6 +34,6 @@ def home():
 if __name__ == '__main__':
     logger.info("Avvio dell'app Flask...")
     try:
-        app.run(debug=True, host='0.0.0.0', port=4000)
+        app.run(debug=True, host='0.0.0.0', port=5000)
     except Exception as e:
         logger.exception("Errore durante l'avvio dell'app Flask: %s", e)

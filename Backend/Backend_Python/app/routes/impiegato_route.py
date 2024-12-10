@@ -11,8 +11,7 @@ def aggiungi_impiegato():
     data = request.json
     try:
         controller.aggiungi_impiegato(
-            data["cf"], data["nome"], data["cognome"], data["datanascita"], data["merito"],
-            data["codicecon"], data["dataassunzione"], data["categoria"], data["salario"]
+            data["cf"], data["nome"], data["cognome"], data["datanascita"], data["codicecon"]
         )
         return jsonify({"message": "Impiegato aggiunto con successo"}), 201
     except Exception as e:
@@ -61,6 +60,7 @@ def get_promozioni(cf):
         return jsonify(promozioni), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
     
 @impiegato_bp.route("/<string:cf>/progetti", methods=["GET"])
 def get_progetto(cf):

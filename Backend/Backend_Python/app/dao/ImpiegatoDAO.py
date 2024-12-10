@@ -8,13 +8,11 @@ class ImpiegatoDAO:
         self.db = db
 
     def inserisci_impiegato(
-        self, cf: str, nome: str, cognome: str, datanascita: date, dataassunzione: date, 
-        codicecon: str, merito: bool, salario: float, categoria: str
+        self, cf: str, nome: str, cognome: str, datanascita: date, codicecon: str
     ):
         query = text("""
-            CALL inserisciimpiegato(
-                :cf, :nome, :cognome, :datanascita, :merito, 
-                :codicecon, :dataassunzione, :categoria, :salario
+            SELECT inserisci_impiegato(
+                :cf, :nome, :cognome, :datanascita, :codicecon
             )
         """)
         params = {
@@ -22,11 +20,7 @@ class ImpiegatoDAO:
             "nome": nome,
             "cognome": cognome,
             "datanascita": datanascita,
-            "merito": merito,
-            "codicecon": codicecon,
-            "dataassunzione": dataassunzione,
-            "categoria": categoria,
-            "salario": salario
+            "codicecon": codicecon
         }
         try:
             self.db.execute(query, params)
@@ -34,6 +28,7 @@ class ImpiegatoDAO:
         except Exception as e:
             self.db.rollback()
             raise RuntimeError(f"Errore nell'inserimento dell'impiegato: {e}")
+
 
     def rimuovi_impiegato(self, cf: str):
         query = text("CALL rimuovi_impiegato(:cf)")
@@ -45,7 +40,14 @@ class ImpiegatoDAO:
             raise RuntimeError(f"Errore nella rimozione dell'impiegato: {e}")
 
     def promuovi_impiegato(self, cf: str, merito: bool):
-        query = text("CALL inseriscipromozione(:cf, :merito)")
+        query = text("""
+                    DO $$
+                    BEGIN
+                        PERFORM promuovi_impiegato(:cf, :merito);
+                        PERFORM calcola_dati_impiegato();
+                    END;
+                    $$
+    """)
         try:
             self.db.execute(query, {"cf": cf, "merito": merito})
             self.db.commit()
@@ -70,8 +72,10 @@ class ImpiegatoDAO:
         except Exception as e:
             raise RuntimeError(f"Errore nel recupero dei progetti: {e}")
 
-    def get_promozioni_imp(self, cf: str, l_promozioni: List[str], date: List[date]):
+    def get_promozioni_imp(self, cf: str):
         query = text("SELECT * FROM preleva_dati WHERE codicefiscale = :cf")
+        l_promozioni = []
+        date = []
         try:
             result = self.db.execute(query, {"cf": cf})
             for row in result.mappings():
@@ -87,5 +91,6 @@ class ImpiegatoDAO:
                 if row["categoria4"]:
                     l_promozioni.append(row["categoria4"])
                     date.append(row["datapassaggio4"])
+            return {l_promozioni[i]: date[i] for i in range(len(l_promozioni))}
         except Exception as e:
             raise RuntimeError(f"Errore nel recupero delle promozioni: {e}")

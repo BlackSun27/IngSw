@@ -464,3 +464,12 @@ INSERT INTO Lavora (Lab1, Lab2, CUP) VALUES
 
 INSERT INTO Lavora (Lab1, Lab2, CUP) VALUES 
 ('Laboratorio D', 'Laboratorio E', 'CUP4');
+
+INSERT INTO Progetto (CUP, RefScie, RespScie, Nome, Budget)
+VALUES
+    ('CUP1', 'CF42', 'CF28', 'Progetto A', 100000),
+    ('CUP2', 'CF25', 'CF2', 'Progetto B', 150000),
+    ('CUP3', 'CF91', 'CF4', 'Progetto C', 120000),
+    ('CUP4', 'CF77', 'CF14', 'Progetto D', 80000),
+    ('CUP5', 'CF62', 'CF58', 'Progetto E', 200000),
+    ('CUP6', 'CF84', 'CF8', 'Progetto F', 180000);

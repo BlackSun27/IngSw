@@ -49,13 +49,3 @@ def carica_responsabile(nome_lab):
         return jsonify({"Responsabile" : responsabile}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-    
-@laboratorio_bp.route("/<nome_lab>/progetti", methods=["GET"])
-def carica_progetti(nome_lab):
-    with next(get_db()) as db:
-        controller = LaboratorioController(db)
-    try:
-        progetti = controller.carica_prog_lavora(nome_lab)
-        return jsonify({"Progetti":progetti})
-    except Exception as e:
-        return jsonify({"error": str(e)})

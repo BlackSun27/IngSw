@@ -21,6 +21,3 @@ class LaboratorioController:
 
     def carica_resp_sci(self, nome_lab: str) -> List[str]:
         return self.dao.get_resp_sci(nome_lab)
-
-    def carica_prog_lavora(self, nome_lab: str) -> List[str]:
-        return self.dao.get_prog_lavora(nome_lab)

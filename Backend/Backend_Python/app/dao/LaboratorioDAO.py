@@ -57,15 +57,3 @@ class LaboratorioDAO:
             return resp
         except Exception as e:
             raise RuntimeError(f"Errore nel recupero del responsabile scientifico: {e}")
-
-    def get_prog_lavora(self, nome_lab: str):
-        query = text("""
-            SELECT cup 
-            FROM lavora 
-            WHERE lab1 = :nome_lab OR lab2 = :nome_lab OR lab3 = :nome_lab
-        """)
-        try:
-            result = self.db.execute(query, {"nome_lab": nome_lab})
-            return [row._asdict() for row in result]
-        except Exception as e:
-            raise RuntimeError(f"Errore nel recupero dei progetti collegati: {e}")
