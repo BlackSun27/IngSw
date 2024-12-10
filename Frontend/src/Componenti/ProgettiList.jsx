@@ -7,6 +7,7 @@ import {
   caricaLaboratori,
 } from 'C:/Users/admin/Desktop/Appunti/INGSW/INGSW2324_52/Frontend/src/Services/ProgettoService.jsx';
 import { useNavigate } from "react-router-dom";
+import '../styles/table.css';
 
 const ProgettiList = () => {
   const navigate = useNavigate();
@@ -17,48 +18,51 @@ const ProgettiList = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [newProgetto, setNewProgetto] = useState({
     cup: "",
-    refscie: "",
-    respscie: "",
+    ref_sci: "",
+    resp: "",
     nome: "",
     budget: "",
   });
 
   useEffect(() => {
     getProgetti()
-      .then(setProgetti)
+      .then((data) => {
+        const uniqueProgetti = Array.from(new Map(data.map(progetto => [progetto.cup, progetto])).values());
+        setProgetti(uniqueProgetti);
+      })
       .catch((error) => {
-        if (error.message.includes("404")) {
-          navigate("/not-found", { state: { message: "Nessun progetto trovato." } });
-        } else {
-          console.error("Errore:", error.message);
-        }
+        console.error("Errore nel caricamento dei progetti:", error.message);
+        navigate("/not-found", { state: { message: "Nessun progetto trovato." } });
       });
   }, [navigate]);
-
+  
+  
   const handleSelectProg = async (cup) => {
     setSelectedProg(cup);
     try {
       const impiegatiData = await caricaImpiegati(cup);
+      console.log("Impiegati caricati:", impiegatiData);
       setImpiegati(impiegatiData);
-
+  
       const laboratoriData = await caricaLaboratori(cup);
+      console.log("Laboratori caricati:", laboratoriData);
       setLaboratori(laboratoriData);
     } catch (error) {
-      if (error.message.includes("404")) {
-        navigate("/not-found", { state: { message: `Il progetto ${cup} non è stato trovato.` } });
-      } else {
-        console.error(error.message);
-      }
+      console.error("Errore:", error.message);
+      navigate("/not-found", { state: { message: `Il progetto ${cup} non è stato trovato.` } });
     }
-  };
-
+  };  
+  
   const handleRimuoviProgetto = async () => {
     if (!selectedProg) return alert("Seleziona un progetto per rimuoverlo!");
     try {
       await rimuoviProgetto(selectedProg);
       setSelectedProg(null);
+  
       const updatedProgetti = await getProgetti();
-      setProgetti(updatedProgetti);
+      const uniqueProgetti = Array.from(new Map(updatedProgetti.map(progetto => [progetto.cup, progetto])).values());
+      setProgetti(uniqueProgetti);
+  
       setImpiegati([]);
       setLaboratori([]);
     } catch (error) {
@@ -68,63 +72,67 @@ const ProgettiList = () => {
         alert(`Errore nella rimozione del progetto: ${error.message}`);
       }
     }
-  };
+  };  
 
   const handleAggiungiProgetto = async (e) => {
     e.preventDefault();
+
+    const progettoDaAggiungere = {
+        cup: newProgetto.cup,
+        ref_sci: newProgetto.ref_sci,
+        resp: newProgetto.resp,
+        nome: newProgetto.nome,
+        budget: Number(newProgetto.budget),
+    };
+
     try {
-      await aggiungiProgetto(newProgetto);
-      alert("Progetto aggiunto con successo!");
-      setNewProgetto({
-        cup: "",
-        refscie: "",
-        respscie: "",
-        nome: "",
-        budget: "",
-      });
-      setShowAddForm(false);
-      const updatedProgetti = await getProgetti();
-      setProgetti(updatedProgetti);
+        const addedProject = await aggiungiProgetto(progettoDaAggiungere);
+        alert("Progetto aggiunto con successo!");
+        console.log("Progetto aggiunto:", addedProject);
+
+        setProgetti((prevProgetti) => [...prevProgetti, addedProject]);
+
+        setNewProgetto({
+            cup: "",
+            ref_sci: "",
+            resp: "",
+            nome: "",
+            budget: "",
+        });
+        setShowAddForm(false);
     } catch (error) {
-      if (error.message.includes("404")) {
-        navigate("/not-found", { state: { message: "Impossibile aggiungere il progetto. Verifica i dati." } });
-      } else {
+        console.error("Errore nell'aggiunta del progetto:", error.message);
         alert(`Errore nell'aggiunta del progetto: ${error.message}`);
-      }
     }
-  };
+};
 
   return (
     <div className="scrollable-table">
-      <div>
+      <div className="left-panel">
         <h1>Lista Progetti</h1>
-        <table border="1">
+        <table className="table" border="1">
           <thead>
             <tr>
               <th>CUP</th>
-              <th>Referente Scientifico</th>
-              <th>Responsabile</th>
               <th>Nome</th>
               <th>Budget</th>
             </tr>
           </thead>
           <tbody>
-            {progetti.map((prog) => (
-              <tr key={prog.cup}>
-                <td>{prog.cup}</td>
-                <td>{prog.refscie}</td>
-                <td>{prog.respscie}</td>
-                <td>{prog.nome}</td>
-                <td>{prog.budget}</td>
-                <td>
-                  <button onClick={() => handleSelectProg(prog.cup)}>Mostra Dettagli</button>
-                </td>
-              </tr>
-            ))}
+          {progetti.map((prog, index) => (
+            <tr key={prog.cup ? prog.cup : `progetto-${index}`}> 
+              <td>{prog.cup}</td>
+              <td>{prog.nome}</td>
+              <td>{prog.budget}</td>
+              <td>
+                <button onClick={() => handleSelectProg(prog.cup)}>Mostra Dettagli</button>
+              </td>
+            </tr>
+          ))}
           </tbody>
         </table>
       </div>
-
+  
       {showAddForm && (
         <form onSubmit={handleAggiungiProgetto} style={{ marginTop: "20px" }}>
           <h2>Aggiungi Progetto</h2>
@@ -136,17 +144,17 @@ const ProgettiList = () => {
             required
           />
           <input
-            name="referente_sci"
+            name="ref_sci"
             placeholder="Referente Scientifico"
-            value={newProgetto.refscie}
-            onChange={(e) => setNewProgetto({ ...newProgetto, refscie: e.target.value })}
+            value={newProgetto.ref_sci}
+            onChange={(e) => setNewProgetto({ ...newProgetto, ref_sci: e.target.value })}
             required
           />
           <input
-            name="responsabile"
+            name="resp"
             placeholder="Responsabile"
-            value={newProgetto.respscie}
-            onChange={(e) => setNewProgetto({ ...newProgetto, respscie: e.target.value })}
+            value={newProgetto.resp}
+            onChange={(e) => setNewProgetto({ ...newProgetto, resp: e.target.value })}
             required
           />
           <input
@@ -167,33 +175,45 @@ const ProgettiList = () => {
           <button type="submit">Aggiungi Progetto</button>
         </form>
       )}
-
+  
       {selectedProg && (
-        <div className="scrollable-table">
+        <div className="right-panel">
           <h2>Dettagli per {selectedProg}</h2>
-          <h3>Impiegati</h3>
-          <ul>
-            {impiegati.map((cf, index) => (
-              <li key={index}>{cf}</li>
-            ))}
-          </ul>
-          <h3>Laboratori</h3>
-          <ul>
+
+          <div className="details">
+            <h3>Referente Scientifico</h3>
+            <p>
+              {impiegati?.referente ? `${impiegati.referente.cf}
+               ${impiegati.referente.nome} ${impiegati.referente.cognome}` : "Non disponibile"}
+            </p>
+          </div>
+          <div className="details">
+            <h3>Responsabile</h3>
+            <p>
+              {impiegati?.responsabile ? ` ${impiegati.responsabile.cf}
+              ${impiegati.responsabile.nome} ${impiegati.responsabile.cognome}` : "Non disponibile"}
+            </p>
+          </div>
+
+          <div className="details">
+            <h3>Laboratori</h3>
+            <ul>
             {laboratori.map((nome, index) => (
-              <li key={index}>{nome}</li>
+              <li key={nome.lab ? nome.lab : `laboratorio-${index}`}>{nome.lab || "Non specificato"}</li>
             ))}
-          </ul>
+            </ul>
+          </div>
         </div>
       )}
-
-      <div>
-        <button onClick={handleRimuoviProgetto}>Rimuovi Progetto</button>
+  
+      <div className="buttons-container">
         <button onClick={() => setShowAddForm((prev) => !prev)}>
-          {showAddForm ? "Annulla Aggiunta" : "Aggiungi Progetto"}
+          {showAddForm ? "Annulla Aggiunta" : "Aggiungi Nuovo Progetto"}
         </button>
+        <button onClick={handleRimuoviProgetto}>Rimuovi Progetto</button>
       </div>
     </div>
   );
-};
+}  
 
 export default ProgettiList;

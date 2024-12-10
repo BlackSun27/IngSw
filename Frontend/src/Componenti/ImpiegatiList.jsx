@@ -115,41 +115,6 @@ const ImpiegatiList = () => {
     }
   };
 
-  /*const handleAggiungiImpiegato = async (e) => {
-    e.preventDefault();
-    const impiegatoDaAggiungere = {
-      ...newImpiegato,
-      merito: false,
-      categoria: "Junior",
-      salario: 1500.0,
-    };
-    if (!newImpiegato.cf || !newImpiegato.nome || !newImpiegato.cognome || !newImpiegato.datanascita || !newImpiegato.codicecon) {
-      return alert("Compila tutti i campi prima di aggiungere un nuovo impiegato!");
-    }    
-    try {
-      const response = await addImpiegato(impiegatoDaAggiungere);
-      alert("Impiegato aggiunto con successo!");
-      
-      setImpiegati((prev) => [...prev, response]);
-  
-      setNewImpiegato({
-        cf: "",
-        nome: "",
-        cognome: "",
-        datanascita: "",
-        codicecon: "",
-        data_assunzione: new Date().toISOString().split("T")[0],
-      });
-      setShowAddForm(false);
-    } catch (error) {
-      if (error.message.includes("404")) {
-        navigate("/not-found", { state: { message: "Errore durante l'aggiunta: impiegato non trovato." } });
-      } else {
-        alert(`Errore nell'aggiunta dell'impiegato: ${error.message}`);
-      }
-    }
-  };*/
-
   const handleAggiungiImpiegato = async (e) => {
     e.preventDefault();
 
@@ -225,9 +190,6 @@ const ImpiegatiList = () => {
   return (
     <div className="scrollable-table">
       <div className="left-panel">
-        <button onClick={() => setShowAddForm((prev) => !prev)} style={{ margin: "10px", padding: "10px" }}>
-          {showAddForm ? "Annulla Aggiunta" : "Aggiungi Nuovo Impiegato"}
-        </button>
         <h1>Lista Impiegati</h1>
         <table className="table" border="1">
           <thead>
@@ -245,13 +207,21 @@ const ImpiegatiList = () => {
           </thead>
           <tbody>
             {impiegati.map((impiegato) => (
-              <tr key={impiegato.cf}>
+              <tr key={impiegato.cf || Math.random()}>
                 <td>{impiegato.cf}</td>
                 <td>{impiegato.nome}</td>
                 <td>{impiegato.cognome}</td>
                 <td>{impiegato.categoria}</td>
-                <td>{impiegato.data_assunzione ? new Date(impiegato.data_assunzione).toLocaleDateString("it-IT") : "Non disponibile"}</td>
-                <td>{impiegato.data_nascita && new Date(impiegato.data_nascita).toLocaleDateString("it-IT") }</td>
+                <td>
+                  {impiegato.data_assunzione
+                    ? new Date(impiegato.data_assunzione).toLocaleDateString("it-IT")
+                    : "Non disponibile"}
+                </td>
+                <td>
+                  {impiegato.data_nascita
+                    ? new Date(impiegato.data_nascita).toLocaleDateString("it-IT")
+                    : "Non disponibile"}
+                </td>
                 <td>{impiegato.eta || "N/A"}</td>
                 <td>{impiegato.salario || "N/A"}</td>
                 <td>{impiegato.merito ? "Sì" : "No"}</td>
@@ -263,7 +233,15 @@ const ImpiegatiList = () => {
           </tbody>
         </table>
       </div>
-
+  
+      <div className="buttons-container">
+        <button onClick={() => setShowAddForm((prev) => !prev)}>
+          {showAddForm ? "Annulla Aggiunta" : "Aggiungi Nuovo Impiegato"}
+        </button>
+        <button onClick={handlePromuoviImpiegato}>Promuovi</button>
+        <button onClick={handleRimuoviImpiegato}>Rimuovi</button>
+      </div>
+  
       {showAddForm && (
         <form onSubmit={handleAggiungiImpiegato} style={{ marginTop: "20px" }}>
           <h2>Aggiungi Impiegato</h2>
@@ -305,8 +283,8 @@ const ImpiegatiList = () => {
           />
           <button type="submit">Aggiungi Impiegato</button>
         </form>
-        )}
-
+      )}
+  
       <div className="right-panel">
         {selectedCF && (
           <>
@@ -320,16 +298,22 @@ const ImpiegatiList = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {promozioni.map((promo, index) => (
-                    <tr key={index}>
-                      <td>{promo.categoria}</td>
-                      <td>{promo.datapassaggio}</td>
+                  {Array.isArray(promozioni) && promozioni.length > 0 ? (
+                    promozioni.map((promo, index) => (
+                      <tr key={index}>
+                        <td>{promo.categoria}</td>
+                        <td>{promo.datapassaggio}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="2">Nessuna promozione disponibile</td>
                     </tr>
-                  ))}
-                </tbody>
+                  )}
+                  </tbody>
               </table>
             </div>
-
+  
             <div className="details">
               <h2>Progetti e Afferenze</h2>
               <table className="details-table" border="1">
@@ -347,19 +331,11 @@ const ImpiegatiList = () => {
                 </tbody>
               </table>
             </div>
-            <div className="buttons-container">
-              {selectedCF && (
-                <>
-                  <button onClick={handlePromuoviImpiegato}>Promuovi</button>
-                  <button onClick={handleRimuoviImpiegato}>Rimuovi</button>
-                </>
-              )}
-            </div>
           </>
         )}
       </div>
     </div>
   );
-};
+}  
 
 export default ImpiegatiList;

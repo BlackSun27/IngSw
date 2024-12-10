@@ -19,12 +19,15 @@ export const aggiungiProgetto = async (progetto) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(progetto),
         });
-        return handleAPIResponse(response, "Errore nell'aggiunta del progetto");
+
+        const addedProject = await handleAPIResponse(response, "Errore nell'aggiunta del progetto");
+        return addedProject;
     } catch (error) {
         console.error("Errore nella chiamata API:", error);
         throw error;
     }
 };
+
 
 export const rimuoviProgetto = async (cup) => {
     try {
@@ -40,18 +43,24 @@ export const rimuoviProgetto = async (cup) => {
 
 export const caricaImpiegati = async (cup) => {
     try {
-        const response = await fetch(`${API_URL}/${cup}/impiegati`);
-        return handleAPIResponse(response, "Errore nel recupero degli impiegati associati al progetto");
+      const response = await fetch(`${API_URL}/${cup}/impiegati`);
+      const data = await handleAPIResponse(response, "Errore nel recupero degli impiegati associati al progetto");
+      return {
+        referente: data.referente,
+        responsabile: data.responsabile,
+      };
     } catch (error) {
-        console.error("Errore nella chiamata API:", error);
-        throw error;
+      console.error("Errore nella chiamata API:", error);
+      throw error;
     }
 };
+  
 
 export const caricaLaboratori = async (cup) => {
     try {
         const response = await fetch(`${API_URL}/${cup}`);
-        return handleAPIResponse(response, "Errore nel recupero dei laboratori associati al progetto");
+        const data = await handleAPIResponse(response, "Errore nel recupero dei laboratori associati al progetto");
+        return Array.isArray(data.laboratori) ? data.laboratori : [];
     } catch (error) {
         console.error("Errore nella chiamata API:", error);
         throw error;

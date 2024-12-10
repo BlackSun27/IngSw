@@ -5,10 +5,9 @@ import {
   rimuoviLaboratorio,
   caricaAfferenze,
   caricaResponsabile,
-  caricaProgetti,
-} from "C:/Users/admin/Desktop/Appunti/INGSW/INGSW2324_52/Frontend/src/Services/LaboratorioService.jsx";
+} from "../Services/LaboratorioService";
 import { useNavigate } from "react-router-dom";
-import '../styles/table.css';
+import "../styles/table.css";
 
 const LaboratoriList = () => {
   const navigate = useNavigate();
@@ -16,7 +15,6 @@ const LaboratoriList = () => {
   const [selectedLab, setSelectedLab] = useState(null);
   const [afferenti, setAfferenti] = useState([]);
   const [responsabile, setResponsabile] = useState("");
-  const [progetto, setProgetto] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [newLaboratorio, setNewLaboratorio] = useState({
     nome: "",
@@ -27,8 +25,9 @@ const LaboratoriList = () => {
 
   useEffect(() => {
     getLaboratori()
-    .then((data) => {
-        const uniqueLaboratori = Array.from(new Map(data.map(lab => [lab.nome, lab])).values());
+      .then((data) => {
+        console.log("Dati ricevuti:", data);
+        const uniqueLaboratori = Array.from(new Map(data.map((lab) => [lab.nome, lab])).values());
         setLaboratori(uniqueLaboratori);
       })
       .catch((error) => {
@@ -39,37 +38,38 @@ const LaboratoriList = () => {
         }
       });
   }, [navigate]);
-
+  
   const handleSelectLab = async (nome) => {
     setSelectedLab(nome);
     try {
       const afferenze = await caricaAfferenze(nome);
-      setAfferenti(afferenze);
-
+      setAfferenti(Array.isArray(afferenze.cf) ? afferenze.cf.map(item => item.cf) : []);
+  
       const responsabileData = await caricaResponsabile(nome);
-      setResponsabile(responsabileData);
-
-      const progettoData = await caricaProgetti(nome);
-      setProgetto(progettoData);
+      const responsabile = responsabileData?.Responsabile?.[0];
+      setResponsabile(
+        responsabile
+          ? `${responsabile.nome} ${responsabile.cognome} (CF: ${responsabile.cf})`
+          : "Informazione non disponibile"
+      );
     } catch (error) {
-      if (error.message.includes("404")) {
-        navigate("/not-found", { state: { message: `Il laboratorio ${nome} non è stato trovato.` } });
-      } else {
-        console.error(error.message);
-      }
+      console.error("Errore nel caricamento dei dettagli del laboratorio:", error.message);
+      setAfferenti([]);
+      setResponsabile("Informazione non disponibile");
     }
+
+    setSelectedLab(nome);
   };
+  
 
   const handleRimuoviLaboratorio = async () => {
     if (!selectedLab) return alert("Seleziona un laboratorio per rimuoverlo!");
     try {
       await rimuoviLaboratorio(selectedLab);
+      setLaboratori((prevLaboratori) => prevLaboratori.filter((lab) => lab.nome !== selectedLab));
       setSelectedLab(null);
-      const updatedLaboratori = await getLaboratori();
-      setLaboratori(updatedLaboratori);
       setAfferenti([]);
       setResponsabile("");
-      setProgetto("");
     } catch (error) {
       if (error.message.includes("404")) {
         navigate("/not-found", { state: { message: `Il laboratorio ${selectedLab} non è stato trovato.` } });
@@ -77,39 +77,44 @@ const LaboratoriList = () => {
         alert(`Errore nella rimozione del laboratorio: ${error.message}`);
       }
     }
-  };
+  };  
 
   const handleAggiungiLaboratorio = async (e) => {
     e.preventDefault();
     try {
-      await aggiungiLaboratori(newLaboratorio);
+      const laboratorio = {
+        nome: newLaboratorio.nome,
+        resp_sci: newLaboratorio.responsabile_sci,
+        topic: newLaboratorio.topic,
+        numero_afferenti: newLaboratorio.numero_afferenti
+      };
+      console.log("Laboratorio inviato:", laboratorio);
+      await aggiungiLaboratori(laboratorio);
       alert("Laboratorio aggiunto con successo!");
       setNewLaboratorio({
         nome: "",
         responsabile_sci: "",
         topic: "",
-        numero_afferenti: 0,
+        numero_afferenti: 0
       });
       setShowAddForm(false);
-      getLaboratori().then(setLaboratori);
+      setLaboratori((prevLaboratori) => prevLaboratori.filter((lab) => lab.nome !== selectedLab));
+      setSelectedLab(null);
+      setAfferenti([]);
+      setResponsabile("");
     } catch (error) {
-      if (error.message.includes("404")) {
-        navigate("/not-found", { state: { message: "Impossibile aggiungere il laboratorio. Verifica i dati." } });
-      } else {
-        alert(`Errore nell'aggiunta del laboratorio: ${error.message}`);
-      }
+      console.error("Errore nell'aggiunta del laboratorio:", error);
     }
   };
-
+  
   return (
-    <div className = "scrollable-table">
-      <div className = "left-panel">
+    <div className="scrollable-table">
+      <div className="left-panel">
         <h1>Lista Laboratori</h1>
-        <table className = "table" border="1">
+        <table className="table" border="1">
           <thead>
             <tr>
               <th>Nome</th>
-              <th>Responsabile Scientifico</th>
               <th>Topic</th>
               <th>Numero Afferenti</th>
             </tr>
@@ -118,13 +123,10 @@ const LaboratoriList = () => {
             {laboratori.map((lab) => (
               <tr key={lab.nome}>
                 <td>{lab.nome}</td>
-                <td>{lab.responsabile_sci}</td>
                 <td>{lab.topic}</td>
                 <td>{lab.numero_afferenti}</td>
                 <td>
-                  <button onClick={() => handleSelectLab(lab.nome)}>
-                    Mostra Dettagli
-                  </button>
+                  <button onClick={() => handleSelectLab(lab.nome)}>Mostra Dettagli</button>
                 </td>
               </tr>
             ))}
@@ -139,30 +141,21 @@ const LaboratoriList = () => {
             name="nome"
             placeholder="Nome Laboratorio"
             value={newLaboratorio.nome}
-            onChange={(e) =>
-              setNewLaboratorio({ ...newLaboratorio, nome: e.target.value })
-            }
+            onChange={(e) => setNewLaboratorio({ ...newLaboratorio, nome: e.target.value })}
             required
           />
           <input
             name="responsabile_sci"
             placeholder="Responsabile Scientifico"
             value={newLaboratorio.responsabile_sci}
-            onChange={(e) =>
-              setNewLaboratorio({
-                ...newLaboratorio,
-                responsabile_sci: e.target.value,
-              })
-            }
+            onChange={(e) => setNewLaboratorio({ ...newLaboratorio, responsabile_sci: e.target.value })}
             required
           />
           <input
             name="topic"
             placeholder="Topic"
             value={newLaboratorio.topic}
-            onChange={(e) =>
-              setNewLaboratorio({ ...newLaboratorio, topic: e.target.value })
-            }
+            onChange={(e) => setNewLaboratorio({ ...newLaboratorio, topic: e.target.value })}
             required
           />
           <input
@@ -170,12 +163,7 @@ const LaboratoriList = () => {
             type="number"
             placeholder="Numero Afferenti"
             value={newLaboratorio.numero_afferenti}
-            onChange={(e) =>
-              setNewLaboratorio({
-                ...newLaboratorio,
-                numero_afferenti: Number(e.target.value),
-              })
-            }
+            onChange={(e) => setNewLaboratorio({ ...newLaboratorio, numero_afferenti: Number(e.target.value) })}
             required
           />
           <button type="submit">Aggiungi Laboratorio</button>
@@ -183,18 +171,18 @@ const LaboratoriList = () => {
       )}
 
       {selectedLab && (
-        <div className = "scrollable-table">
+        <div className="right-panel">
           <h2>Dettagli per {selectedLab}</h2>
           <h3>Afferenze</h3>
           <ul>
-            {afferenti.map((cf, index) => (
-              <li key={index}>{cf}</li>
-            ))}
+            {afferenti.length > 0 ? (
+              afferenti.map((cf, index) => <li key={index}>{cf}</li>)
+            ) : (
+              <li>Nessuna afferenza trovata.</li>
+            )}
           </ul>
           <h3>Responsabile</h3>
-          <p>{responsabile}</p>
-          <h3>Progetto</h3>
-          <p>{progetto}</p>
+          <p>{responsabile || "Informazione non disponibile"}</p>
         </div>
       )}
 
