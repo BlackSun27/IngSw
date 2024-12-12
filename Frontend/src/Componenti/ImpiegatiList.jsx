@@ -7,7 +7,7 @@ import {
   rimuoviImpiegato,
   promuoviImpiegato,
   addImpiegato,
-} from "C:/Users/admin/Desktop/Appunti/INGSW/INGSW2324_52/Frontend/src/Services/ImpiegatoService.jsx";
+} from "../Services/ImpiegatoService.jsx";
 import { useNavigate } from "react-router-dom";
 import '../styles/table.css';
 

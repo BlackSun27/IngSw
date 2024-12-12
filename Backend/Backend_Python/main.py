@@ -1,9 +1,14 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from flask import Flask
 from flask_cors import CORS
-from app.routes.gestionale_route import gestionale_bp
-from app.routes.impiegato_route import impiegato_bp
-from app.routes.laboratorio_route import laboratorio_bp
-from app.routes.progetto_route import progetto_bp
+from Backend_Python.app.routes.gestionale_route import gestionale_bp
+from Backend_Python.app.routes.impiegato_route import impiegato_bp
+from Backend_Python.app.routes.laboratorio_route import laboratorio_bp
+from Backend_Python.app.routes.progetto_route import progetto_bp
 import logging
 from logging.handlers import RotatingFileHandler
 

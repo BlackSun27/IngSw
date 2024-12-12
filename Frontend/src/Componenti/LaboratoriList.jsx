@@ -5,7 +5,7 @@ import {
   rimuoviLaboratorio,
   caricaAfferenze,
   caricaResponsabile,
-} from "../Services/LaboratorioService";
+} from "../Services/LaboratorioService.jsx";
 import { useNavigate } from "react-router-dom";
 import "../styles/table.css";
 

@@ -2,20 +2,24 @@ FROM python:3-slim-buster
 
 WORKDIR /app
 
-COPY ./requirements.txt ./
+COPY ./requirements.txt /app/
 
 RUN pip install --upgrade pip
 
 RUN apt-get update && apt-get install -y git && apt-get clean
 
-RUN pip install -r requirements.txt
+RUN pip install flask
 
-COPY ./Backend_Python /app/
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-ENV PYTHONPATH="/app"
+COPY ./Backend_Python /app/Backend_Python
+COPY ./Backend_SQL /app/Backend_SQL
 
-ENTRYPOINT [ "flask" ]
+ENV PYTHONPATH="/app:/app/Backend_Python"
+ENV FLASK_APP=Backend_Python.main:app
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
 
 EXPOSE 5000
 
-CMD [ "--app", "app.py", "run", "--host=0.0.0.0", "--port=5000" ]
+CMD ["flask", "run"]

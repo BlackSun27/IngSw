@@ -5,7 +5,7 @@ import {
   rimuoviProgetto,
   caricaImpiegati,
   caricaLaboratori,
-} from 'C:/Users/admin/Desktop/Appunti/INGSW/INGSW2324_52/Frontend/src/Services/ProgettoService.jsx';
+} from "../Services/ProgettoService.jsx";
 import { useNavigate } from "react-router-dom";
 import '../styles/table.css';
 

@@ -6,14 +6,13 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - FLASK_APP=/app/app.py
+      - FLASK_APP=Backend_Python.main:app
       - FLASK_ENV=development
       - DB_URL_DOCKER=postgresql://postgres:Blacks27@flask_db:5432/postgres
     depends_on:
       - flask_db
     volumes:
-      - ./Backend/Backend_Python:/app
-    command: ["flask", "--app", "/app/app.py", "run", "--host=0.0.0.0", "--port=5000"]
+      - ./Backend:/app
 
   flask_db:
     container_name: flask_db
@@ -28,15 +27,18 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./Backend/Backend_SQL/Dump:/docker-entrypoint-initdb.d
 
-volumes:
-  postgres_data:
+  frontend:
+    container_name: react-app
+    build: 
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    volumes:
+      - ./Frontend/dist:/usr/share/nginx/html
+    depends_on:
+      - flask-app
 
-#frontend:
-#    container_name: react-app
-#    build: 
-#      context: ./Frontend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "3000:80"
-#    depends_on:
-#      - flask-app
+volumes:
+  flask_app_data:
+  postgres_data:

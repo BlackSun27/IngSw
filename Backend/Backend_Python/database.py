@@ -6,8 +6,7 @@ import os
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DB_URL_DOCKER")
-DATABASE_URL = "postgresql://postgres:Blacks27@localhost:5432/postgres"
+DATABASE_URL = os.getenv("DB_URL_DOCKER", "postgresql://postgres:Blacks27@localhost:5432/postgres")
 
 if not DATABASE_URL:
     raise ValueError("Database URL not set!")

@@ -1,10 +1,10 @@
-import handleAPIResponse from "C:/Users/admin/Desktop/Appunti/INGSW/INGSW2324_52/Frontend/src/Services/handleAPIresponse.jsx";
+import handleAPIResponse from "../Services/handleAPIresponse.jsx";
 
-const API_URL = "http://localhost:4000/api/impiegati";
+const API_URL = "http://localhost:5000/api/impiegati";
 
 export const getImpiegati = async () => {
     try {
-        const response = await fetch(`http://localhost:4000/api/gestionale/impiegati`);
+        const response = await fetch(`http://localhost:5000/api/gestionale/impiegati`);
         return handleAPIResponse(response, "Errore nel prelievo degli impiegati");
     } catch (error) {
         console.error("Errore nella chiamata API:", error);

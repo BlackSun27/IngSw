@@ -1767,3 +1767,68 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2024-12-10 13:58:36,927 - INFO - Avvio dell'app Flask...
 2024-12-10 13:58:37,064 - WARNING -  * Debugger is active!
 2024-12-10 13:58:37,097 - INFO -  * Debugger PIN: 268-326-537
+2024-12-11 16:50:46,536 - INFO - Avvio dell'app Flask...
+2024-12-11 16:50:48,330 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://100.126.0.29:5000
+2024-12-11 16:50:48,331 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-11 16:50:48,360 - INFO -  * Restarting with stat
+2024-12-11 16:50:52,563 - INFO - Avvio dell'app Flask...
+2024-12-11 16:50:52,683 - WARNING -  * Debugger is active!
+2024-12-11 16:50:52,749 - INFO -  * Debugger PIN: 268-326-537
+2024-12-11 16:53:56,011 - INFO -  * Detected change in 'c:\\Users\\admin\\Desktop\\Appunti\\INGSW\\INGSW2324_52\\Backend\\Backend_Python\\main.py', reloading
+2024-12-11 16:53:56,514 - INFO -  * Restarting with stat
+2024-12-11 16:54:03,215 - INFO - Avvio dell'app Flask...
+2024-12-11 16:54:03,332 - WARNING -  * Debugger is active!
+2024-12-11 16:54:03,381 - INFO -  * Debugger PIN: 268-326-537
+2024-12-11 16:54:41,500 - INFO - 127.0.0.1 - - [11/Dec/2024 16:54:41] "GET /api/gestionale/impiegati HTTP/1.1" 200 -
+2024-12-11 16:55:03,892 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:03] "GET /api/impiegati/CF4/promozioni HTTP/1.1" 200 -
+2024-12-11 16:55:04,244 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:04] "GET /api/impiegati/CF4/laboratori HTTP/1.1" 200 -
+2024-12-11 16:55:05,044 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:05] "GET /api/impiegati/CF4/progetti HTTP/1.1" 200 -
+2024-12-11 16:55:25,713 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:25] "GET /api/impiegati/CF10/promozioni HTTP/1.1" 200 -
+2024-12-11 16:55:26,256 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:26] "GET /api/impiegati/CF10/laboratori HTTP/1.1" 200 -
+2024-12-11 16:55:26,342 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:26] "[33mGET /api/impiegati/CF10/progetti HTTP/1.1[0m" 404 -
+2024-12-11 16:55:33,784 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:33] "GET /api/impiegati/CF11/promozioni HTTP/1.1" 200 -
+2024-12-11 16:55:34,034 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:34] "GET /api/impiegati/CF11/laboratori HTTP/1.1" 200 -
+2024-12-11 16:55:34,169 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:34] "GET /api/impiegati/CF11/progetti HTTP/1.1" 200 -
+2024-12-11 16:55:39,054 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:39] "GET /api/impiegati/CF12/promozioni HTTP/1.1" 200 -
+2024-12-11 16:55:39,475 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:39] "GET /api/impiegati/CF12/laboratori HTTP/1.1" 200 -
+2024-12-11 16:55:39,663 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:39] "GET /api/impiegati/CF12/progetti HTTP/1.1" 200 -
+2024-12-11 16:55:45,111 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:45] "GET /api/gestionale/laboratori HTTP/1.1" 200 -
+2024-12-11 16:55:53,607 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:53] "GET /api/laboratori/Laboratorio%20L HTTP/1.1" 200 -
+2024-12-11 16:55:53,882 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:53] "GET /api/laboratori/Laboratorio%20L/responsabile HTTP/1.1" 200 -
+2024-12-11 16:55:57,393 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:57] "OPTIONS /api/laboratori/Laboratorio%20L HTTP/1.1" 200 -
+2024-12-11 16:55:57,720 - INFO - 127.0.0.1 - - [11/Dec/2024 16:55:57] "DELETE /api/laboratori/Laboratorio%20L HTTP/1.1" 200 -
+2024-12-11 16:56:03,810 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:03] "GET /api/laboratori/Laboratorio%20B HTTP/1.1" 200 -
+2024-12-11 16:56:04,172 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:04] "GET /api/laboratori/Laboratorio%20B/responsabile HTTP/1.1" 200 -
+2024-12-11 16:56:23,945 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:23] "GET /api/laboratori/Laboratorio%20E HTTP/1.1" 200 -
+2024-12-11 16:56:24,017 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:24] "GET /api/laboratori/Laboratorio%20E/responsabile HTTP/1.1" 200 -
+2024-12-11 16:56:43,283 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:43] "GET /api/gestionale/progetti HTTP/1.1" 200 -
+2024-12-11 16:56:58,558 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:58] "GET /api/progetto/CUP4/impiegati HTTP/1.1" 200 -
+2024-12-11 16:56:58,802 - INFO - 127.0.0.1 - - [11/Dec/2024 16:56:58] "GET /api/progetto/CUP4 HTTP/1.1" 200 -
+2024-12-11 16:57:03,941 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:03] "GET /api/progetto/CUP8/impiegati HTTP/1.1" 200 -
+2024-12-11 16:57:04,292 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:04] "GET /api/progetto/CUP8 HTTP/1.1" 200 -
+2024-12-11 16:57:07,957 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:07] "GET /api/progetto/CUP3/impiegati HTTP/1.1" 200 -
+2024-12-11 16:57:08,207 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:08] "GET /api/progetto/CUP3 HTTP/1.1" 200 -
+2024-12-11 16:57:11,229 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:11] "GET /api/progetto/CUP7/impiegati HTTP/1.1" 200 -
+2024-12-11 16:57:11,489 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:11] "GET /api/progetto/CUP7 HTTP/1.1" 200 -
+2024-12-11 16:57:13,406 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:13] "GET /api/progetto/CUP7/impiegati HTTP/1.1" 200 -
+2024-12-11 16:57:13,733 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:13] "GET /api/progetto/CUP7 HTTP/1.1" 200 -
+2024-12-11 16:57:14,378 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:14] "GET /api/progetto/CUP7/impiegati HTTP/1.1" 200 -
+2024-12-11 16:57:15,020 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:15] "GET /api/progetto/CUP7 HTTP/1.1" 200 -
+2024-12-11 16:57:16,892 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:16] "OPTIONS /api/progetto/CUP7 HTTP/1.1" 200 -
+2024-12-11 16:57:17,494 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:17] "DELETE /api/progetto/CUP7 HTTP/1.1" 200 -
+2024-12-11 16:57:17,600 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:17] "GET /api/gestionale/progetti HTTP/1.1" 200 -
+2024-12-11 16:57:19,696 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:19] "GET /api/progetto/CUP3/impiegati HTTP/1.1" 200 -
+2024-12-11 16:57:19,961 - INFO - 127.0.0.1 - - [11/Dec/2024 16:57:19] "GET /api/progetto/CUP3 HTTP/1.1" 200 -
+2024-12-12 15:53:10,515 - INFO - Avvio dell'app Flask...
+2024-12-12 15:53:11,187 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.225.8.216:5000
+2024-12-12 15:53:11,188 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-12 15:53:11,216 - INFO -  * Restarting with stat
+2024-12-12 15:53:13,916 - INFO - Avvio dell'app Flask...
+2024-12-12 15:53:13,990 - WARNING -  * Debugger is active!
+2024-12-12 15:53:14,023 - INFO -  * Debugger PIN: 268-326-537
