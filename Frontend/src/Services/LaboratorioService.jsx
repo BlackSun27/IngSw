@@ -1,11 +1,12 @@
 import handleAPIResponse from "../Services/handleAPIresponse.jsx";
 
-const API_URL = "http://localhost:5000/api/laboratori";
+const BASE_URL = "http://localhost:5000";
+const API_URL = `${BASE_URL}/api/laboratori`;
 const getEncodedURL = (path, nome) => `${API_URL}/${encodeURIComponent(nome)}${path}`;
 
 export const getLaboratori = async () => {
     try {
-        const response = await fetch(`http://127.0.0.1:5000/api/gestionale/laboratori`);
+        const response = await fetch(`${BASE_URL}/api/gestionale/laboratori`);
         return handleAPIResponse(response, "Errore nel prelievo dei laboratori");
     } catch (error) {
         console.error("Errore nella chiamata API:", error);

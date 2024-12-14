@@ -1,6 +1,7 @@
 import handleAPIResponse from "../Services/handleAPIresponse.jsx";
 
-const API_URL = "http://localhost:5000/api/progetto";
+const BASE_URL = "http://localhost:5000";
+const API_URL = `${BASE_URL}/api/progetto`;
 
 export const getProgetti = async () => {
     try {
