@@ -2,18 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 from sqlalchemy.exc import SQLAlchemyError
-import os
 
 load_dotenv()
 
-ENVIROMENT = os.getenv("ENVIROMENT", "local")
-
-if ENVIROMENT=="render":
-    DATABASE_URL = os.getenv("DB_URL_DOCKER")    
-elif ENVIROMENT=="local":
-    DATABASE_URL = "postgresql://postgres:Blacks27@localhost:5432/postgres"
-
-
+DATABASE_URL = "postgresql://postgres_ingsw52_user:ZxyNuWqn3cmXwVBXbbr1id82MkTCRA4s@dpg-ctdvlk2lqhvc73daigl0-a.frankfurt-postgres.render.com/postgres_ingsw52"
 
 if not DATABASE_URL:
     raise ValueError("Database URL not set!")

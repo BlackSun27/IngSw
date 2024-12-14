@@ -1,6 +1,6 @@
 import handleAPIResponse from "../Services/handleAPIresponse.jsx";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://backend-zdqg.onrender.com";
 const API_URL = `${BASE_URL}/api/laboratori`;
 const getEncodedURL = (path, nome) => `${API_URL}/${encodeURIComponent(nome)}${path}`;
 

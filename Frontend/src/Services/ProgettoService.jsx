@@ -1,11 +1,11 @@
 import handleAPIResponse from "../Services/handleAPIresponse.jsx";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://backend-zdqg.onrender.com";
 const API_URL = `${BASE_URL}/api/progetto`;
 
 export const getProgetti = async () => {
     try {
-        const response = await fetch("http://localhost:5000/api/gestionale/progetti");
+        const response = await fetch(`${BASE_URL}/api/gestionale/progetti`);
         return handleAPIResponse(response, "Errore nel recupero dei progetti");
     } catch (error) {
         console.error("Errore nella chiamata API:", error);
